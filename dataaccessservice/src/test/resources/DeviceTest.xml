@@ -1,0 +1,21 @@
+<dataset>
+
+    <device id = "1" type="temperature,illumination,humidity device" serial_number="12AC5600214" city="Minsk" ip="37.214.77.160" latitude="53.9" longitude="27.57"/>
+
+    <sensor id="1" type="temperature sensor" units="C" device_id="1"/>
+    <sensor id="2" type="illumination sensor" units="Lx" device_id="1"/>
+    <sensor id="3" type="humidity sensor" units="%" device_id="1"/>
+
+    <sensor_value id="1" value ="20" date = "2019-10-14 08:41:45" sensor_id="1"/>
+    <sensor_value id="2" value ="25" date = "2019-10-14 08:41:46" sensor_id="1"/>
+    <sensor_value id="3" value ="30" date = "2019-10-14 08:41:47" sensor_id="1"/>
+
+    <sensor_value id="4" value ="60" date = "2019-10-14 08:41:48" sensor_id="2"/>
+    <sensor_value id="5" value ="65" date = "2019-10-14 08:41:49" sensor_id="2"/>
+    <sensor_value id="6" value ="70" date = "2019-10-14 08:41:50" sensor_id="2"/>
+
+    <sensor_value id="7" value ="150" date = "2019-10-14 08:41:51" sensor_id="3"/>
+    <sensor_value id="8" value ="155" date = "2019-10-14 08:41:52" sensor_id="3"/>
+    <sensor_value id="9" value ="160" date = "2019-10-14 08:41:53" sensor_id="3"/>
+
+</dataset>

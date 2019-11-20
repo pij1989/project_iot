@@ -1,0 +1,14 @@
+<dataset>
+
+    <role id="1" role_name="ANALITIC"/>
+    <role id="2" role_name="ADMIN"/>
+
+    <user id="2" first_name="Ivan" last_name="Ivanov" login="vanes" email="ivan@mail.ru" password="1234567Ww"/>
+    <user id="3" first_name="Petr" last_name="Petrov" login="petro" email="petr@mail.ru" password="1234567Qq" />
+    <user id="4" first_name="Anton" last_name="Antonov" login="anton" email="anton@mail.ru" password="1234567Rr"/>
+
+    <role_user roles_id="1" users_id="2"/>
+    <role_user roles_id="1" users_id="3"/>
+    <role_user roles_id="1" users_id="4"/>
+
+</dataset>

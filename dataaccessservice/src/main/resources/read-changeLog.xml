@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="dimon">
+        <sql>
+            create table if not exists `device`(
+            `id` integer not null primary key,
+            `type` varchar(255),
+            `serial_number` varchar(255),
+            `ip` varchar(45),
+            `city` varchar (255),
+            `latitude` double (10,4),
+            `longitude` double (10,4));
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="dimon">
+        <sql>
+            create table if not exists `sensor`(
+            `id` integer not null primary key,
+            `type` varchar(255),
+            `units` varchar(45),
+            `device_id` integer not null,
+            constraint `fk_sensor_device` foreign key (`device_id`) references `device`(`id`));
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="dimon">
+        <sql>
+            create table if not exists `sensor_value`(
+            `id` integer not null primary key,
+            `value` int (11),
+            `date` timestamp,
+            `sensor_id` integer not null,
+            constraint `fk_sensor_value_sensor` foreign key (`sensor_id`) references `sensor`(`id`));
+        </sql>
+    </changeSet>
+
+    <changeSet id="4" author="dimon">
+        <sql>
+            create table if not exists `role`(
+            `id` integer not null primary key,
+            `role_name` varchar(100) not null);
+        </sql>
+    </changeSet>
+
+    <changeSet id="5" author="dimon">
+        <sql>
+            insert ignore into `role` set `id` = 1,`role_name`='ANALITIC';
+            insert ignore into `role` set `id` = 2,`role_name`='ADMIN';
+        </sql>
+    </changeSet>
+
+    <changeSet id="6" author="dimon">
+        <sql>
+            create table if not exists `user`(
+            `id` integer not null primary key,
+            `first_name` varchar(255),
+            `last_name` varchar(255),
+            `login` varchar(255),
+            `email` varchar(255),
+            `password` varchar(255));
+        </sql>
+    </changeSet>
+
+    <changeSet id="7" author="dimon">
+        <sql>
+            create table if not exists `user`(
+            `id` integer not null primary key,
+            `first_name` varchar(255),
+            `last_name` varchar(255),
+            `login` varchar(255),
+            `email` varchar(255),
+            `password` varchar(255));
+        </sql>
+    </changeSet>
+
+    <changeSet id="8" author="dimon">
+        <sql>
+            create table if not exists `role_user`(
+            `roles_id` integer not null,
+            `users_id` integer not null,
+            primary key(`roles_id`,`users_id`),
+            constraint `fk_users_roles_1` foreign key (`users_id`) references `user`(`id`),
+            constraint `fk_users_roles_2` foreign key (`roles_id`) references `role`(`id`));
+        </sql>
+    </changeSet>
+
+    <changeSet id="9" author="dimon">
+        <sql>
+            create table if not exists `notification`(
+            `id` integer not null primary key,
+            `update_date` timestamp);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

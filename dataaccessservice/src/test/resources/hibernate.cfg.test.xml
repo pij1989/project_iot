@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="connection.pool_size">20</property>
+        <property name="hibernate.connection.isolation">2</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <mapping class="ru.pij.dimon.pojo.Sensor"/>
+        <mapping class="ru.pij.dimon.pojo.Device"/>
+        <mapping class="ru.pij.dimon.pojo.Location"/>
+        <mapping class="ru.pij.dimon.pojo.User"/>
+        <mapping class="ru.pij.dimon.pojo.SensorValue"/>
+        <mapping class="ru.pij.dimon.pojo.Role"/>
+
+    </session-factory>
+</hibernate-configuration>
