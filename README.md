@@ -1,8 +1,8 @@
-# project_iot
+# Project_IoT
 
 This is an IoT project. The application are implemented using Spring Boot, Spring MVC. Data save in MySQL database with using framework Hibernate as JPA implementation. 
 
-### instructions to run application
+### Instructions to run application
 
 •  Install Open JDK 11
 
@@ -25,3 +25,7 @@ This is an IoT project. The application are implemented using Spring Boot, Sprin
 •  Launch devices
 
 •  Launch batchservice
+
+### Author
+
+Dmitry Pozharski
